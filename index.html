@@ -1395,18 +1395,11 @@
             Arvi, Wardha
           </div>
           <a
-            href="tel:9765737711"
+            href="mailto:purvi.mess.services@gmail.com"
             class="flex items-center justify-center md:justify-start gap-3 text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors"
           >
-            <span class="material-symbols-outlined text-[20px]">call</span>
-            9765737711
-          </a>
-          <a
-            href="tel:9545072112"
-            class="flex items-center justify-center md:justify-start gap-3 text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors"
-          >
-            <span class="material-symbols-outlined text-[20px]">call</span>
-            9545072112
+            <span class="material-symbols-outlined text-[20px]">mail</span>
+            purvi.mess.services@gmail.com
           </a>
         </div>
         <div class="flex flex-col items-center md:items-end">
@@ -1445,290 +1438,292 @@
     </a>
 
     <script>
-            // ── Tailwind config already loaded from script.js ──
+      // ── Tailwind config already loaded from script.js ──
 
-            // ── Scroll Reveal ──
-            function reveal() {
-              document.querySelectorAll(".reveal").forEach((el) => {
-                if (el.getBoundingClientRect().top < window.innerHeight - 150) {
-                  el.classList.add("active");
-                }
-              });
-            }
-            window.addEventListener("scroll", reveal);
-            reveal();
-
-            // ── Nav active link ──
-            const navLinks = document.querySelectorAll("header nav div.hidden a");
-            navLinks.forEach((link) => {
-              link.addEventListener("click", function () {
-                navLinks.forEach((l) => {
-                  l.classList.remove(
-                    "text-primary",
-                    "font-bold",
-                    "border-b-2",
-                    "border-primary",
-                  );
-                  l.classList.add("text-on-surface-variant", "font-medium");
-                });
-                this.classList.add(
-                  "text-primary",
-                  "font-bold",
-                  "border-b-2",
-                  "border-primary",
-                );
-                this.classList.remove("text-on-surface-variant", "font-medium");
-              });
-            });
-
-            // ── Menu Modal ──
-            function openMenuModal() {
-              const m = document.getElementById("menuModal");
-              m.classList.remove("hidden");
-              m.classList.add("flex");
-              document.body.style.overflow = "hidden";
-            }
-            function closeMenuModal() {
-              const m = document.getElementById("menuModal");
-              m.classList.add("hidden");
-              m.classList.remove("flex");
-              document.body.style.overflow = "";
-            }
-            document.addEventListener("keydown", (e) => {
-              if (e.key === "Escape") closeMenuModal();
-            });
-
-            // ── Feedback System ──
-            const SEED_FEEDBACKS = [
-              {
-                name: "Kartik Gurve",
-                college: "G.P. Arvi",
-                rating: 5,
-                text: "Moving to Arvi for college was tough, but Purvi Mess made me feel at home. The food is always fresh, non-greasy, and truly delicious. Daal Tadka is my absolute favorite!",
-                ts: Date.now() - 1000000,
-              },
-              {
-                name: "Priya Bhalerao",
-                college: "G.P. Arvi",
-                rating: 5,
-                text: "Ghar jaisa khana! The rotis are always soft and fresh. I've been a subscriber for 6 months and never had a bad meal. Highly recommended for all students!",
-                ts: Date.now() - 800000,
-              },
-              {
-                name: "Rohit Meshram",
-                college: "Engineering College, Wardha",
-                rating: 4,
-                text: "Really good value for money. The non-veg Sunday special is something I look forward to every week. The chicken curry is exceptional!",
-                ts: Date.now() - 600000,
-              },
-              {
-                name: "Sneha Deshmukh",
-                college: "Government College Arvi",
-                rating: 5,
-                text: "Bharti Auntie's food is pure love. The half tiffin is perfectly portioned for me. Dal and chawal combo is unmatched. Will never switch to any other mess!",
-                ts: Date.now() - 200000,
-              },
-            ];
-
-            let allFeedbacks = [];
-            let currentSlide = 0;
-            let slideInterval = null;
-
-            async function loadFeedbacks() {
-              try {
-                const res = await fetch("https://purvi-mess-backend.onrender.com/api/feedback");
-                const data = await res.json();
-                allFeedbacks = [...SEED_FEEDBACKS, ...data];
-              } catch (err) {
-                // Fallback to seed feedbacks if server is off
-                allFeedbacks = [...SEED_FEEDBACKS];
-              }
-              renderSlideshow();
-              updateCounter();
-            }
-
-            async function saveFeedback(fb) {
-             try {
-        await fetch('https://purvi-mess-backend.onrender.com/api/feedback', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(fb)
+      // ── Scroll Reveal ──
+      function reveal() {
+        document.querySelectorAll(".reveal").forEach((el) => {
+          if (el.getBoundingClientRect().top < window.innerHeight - 150) {
+            el.classList.add("active");
+          }
         });
-      } catch (err) {
-        console.log('Could not save to server, using local only');
       }
-            }
+      window.addEventListener("scroll", reveal);
+      reveal();
 
-            function renderSlideshow() {
-              const container = document.getElementById("slidesContainer");
-              const dots = document.getElementById("dots");
-              if (!container || !dots) return;
+      // ── Nav active link ──
+      const navLinks = document.querySelectorAll("header nav div.hidden a");
+      navLinks.forEach((link) => {
+        link.addEventListener("click", function () {
+          navLinks.forEach((l) => {
+            l.classList.remove(
+              "text-primary",
+              "font-bold",
+              "border-b-2",
+              "border-primary",
+            );
+            l.classList.add("text-on-surface-variant", "font-medium");
+          });
+          this.classList.add(
+            "text-primary",
+            "font-bold",
+            "border-b-2",
+            "border-primary",
+          );
+          this.classList.remove("text-on-surface-variant", "font-medium");
+        });
+      });
 
-              container.innerHTML = "";
-              dots.innerHTML = "";
+      // ── Menu Modal ──
+      function openMenuModal() {
+        const m = document.getElementById("menuModal");
+        m.classList.remove("hidden");
+        m.classList.add("flex");
+        document.body.style.overflow = "hidden";
+      }
+      function closeMenuModal() {
+        const m = document.getElementById("menuModal");
+        m.classList.add("hidden");
+        m.classList.remove("flex");
+        document.body.style.overflow = "";
+      }
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeMenuModal();
+      });
 
-              allFeedbacks.forEach((fb, i) => {
-                // Slide
-                const slide = document.createElement("div");
-                slide.className =
-                  "feedback-slide flex-col gap-4 " +
-                  (i === currentSlide ? "active" : "");
-                slide.innerHTML = `
+      // ── Feedback System ──
+      const SEED_FEEDBACKS = [
+        {
+          name: "Kartik Gurve",
+          college: "G.P. Arvi",
+          rating: 5,
+          text: "Moving to Arvi for college was tough, but Purvi Mess made me feel at home. The food is always fresh, non-greasy, and truly delicious. Daal Tadka is my absolute favorite!",
+          ts: Date.now() - 1000000,
+        },
+        {
+          name: "Chaitanya Bhalerao",
+          college: "G.P. Arvi",
+          rating: 5,
+          text: "Ghar jaisa khana! The rotis are always soft and fresh. I've been a subscriber for 6 months and never had a bad meal. Highly recommended for all students!",
+          ts: Date.now() - 800000,
+        },
+        {
+          name: "Rohit Meshram",
+          college: "RV Parankar Engineering College, Arvi",
+          rating: 4,
+          text: "Really good value for money. The non-veg Sunday special is something I look forward to every week. The chicken curry is exceptional!",
+          ts: Date.now() - 600000,
+        },
+        {
+          name: "Sneha Deshmukh",
+          college: "Government College Arvi",
+          rating: 5,
+          text: " food is pure love. The half tiffin is perfectly portioned for me. Dal and chawal combo is unmatched. Will never switch to any other mess!",
+          ts: Date.now() - 200000,
+        },
+      ];
+
+      let allFeedbacks = [];
+      let currentSlide = 0;
+      let slideInterval = null;
+
+      async function loadFeedbacks() {
+        try {
+          const res = await fetch(
+            "https://purvi-mess-backend.onrender.com/api/feedback",
+          );
+          const data = await res.json();
+          allFeedbacks = [...SEED_FEEDBACKS, ...data];
+        } catch (err) {
+          // Fallback to seed feedbacks if server is off
+          allFeedbacks = [...SEED_FEEDBACKS];
+        }
+        renderSlideshow();
+        updateCounter();
+      }
+
+      async function saveFeedback(fb) {
+        try {
+          await fetch("https://purvi-mess-backend.onrender.com/api/feedback", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(fb),
+          });
+        } catch (err) {
+          console.log("Could not save to server, using local only");
+        }
+      }
+
+      function renderSlideshow() {
+        const container = document.getElementById("slidesContainer");
+        const dots = document.getElementById("dots");
+        if (!container || !dots) return;
+
+        container.innerHTML = "";
+        dots.innerHTML = "";
+
+        allFeedbacks.forEach((fb, i) => {
+          // Slide
+          const slide = document.createElement("div");
+          slide.className =
+            "feedback-slide flex-col gap-4 " +
+            (i === currentSlide ? "active" : "");
+          slide.innerHTML = `
                   <div class="flex gap-1 mb-2">${"★".repeat(fb.rating)}<span class="text-outline-variant">${"★".repeat(5 - fb.rating)}</span></div>
                   <p class="font-headline-md text-[18px] text-on-surface-variant leading-relaxed italic flex-1">"${fb.text}"</p>
                   <div class="mt-4">
                     <p class="font-label-md text-label-md text-primary">${fb.name}</p>
                     <p class="font-caption text-caption text-on-surface-variant">${fb.college}</p>
                   </div>`;
-                slide
-                  .querySelector(".flex.gap-1")
-                  .querySelectorAll("*")
-                  .forEach((s, j) => {
-                    if (j < fb.rating) s.style.color = "#f59e0b";
-                  });
-                // Re-render stars properly
-                slide.querySelector(".flex.gap-1").innerHTML = Array.from(
-                  { length: 5 },
-                  (_, j) =>
-                    `<span style="color:${j < fb.rating ? "#f59e0b" : "#d8c3ad"};font-size:20px">★</span>`,
-                ).join("");
-                container.appendChild(slide);
+          slide
+            .querySelector(".flex.gap-1")
+            .querySelectorAll("*")
+            .forEach((s, j) => {
+              if (j < fb.rating) s.style.color = "#f59e0b";
+            });
+          // Re-render stars properly
+          slide.querySelector(".flex.gap-1").innerHTML = Array.from(
+            { length: 5 },
+            (_, j) =>
+              `<span style="color:${j < fb.rating ? "#f59e0b" : "#d8c3ad"};font-size:20px">★</span>`,
+          ).join("");
+          container.appendChild(slide);
 
-                // Dot
-                const dot = document.createElement("button");
-                dot.className =
-                  "w-2 h-2 rounded-full transition-all duration-300 " +
-                  (i === currentSlide ? "bg-primary w-6" : "bg-outline-variant");
-                dot.onclick = () => goToSlide(i);
-                dots.appendChild(dot);
-              });
+          // Dot
+          const dot = document.createElement("button");
+          dot.className =
+            "w-2 h-2 rounded-full transition-all duration-300 " +
+            (i === currentSlide ? "bg-primary w-6" : "bg-outline-variant");
+          dot.onclick = () => goToSlide(i);
+          dots.appendChild(dot);
+        });
 
-              startAutoPlay();
-            }
+        startAutoPlay();
+      }
 
-            function goToSlide(idx) {
-              const slides = document.querySelectorAll(".feedback-slide");
-              const dots = document.querySelectorAll("#dots button");
-              slides.forEach((s, i) => {
-                s.classList.toggle("active", i === idx);
-              });
-              dots.forEach((d, i) => {
-                d.className =
-                  "w-2 h-2 rounded-full transition-all duration-300 " +
-                  (i === idx ? "bg-primary w-6" : "bg-outline-variant");
-              });
-              currentSlide = idx;
-              resetProgress();
-            }
+      function goToSlide(idx) {
+        const slides = document.querySelectorAll(".feedback-slide");
+        const dots = document.querySelectorAll("#dots button");
+        slides.forEach((s, i) => {
+          s.classList.toggle("active", i === idx);
+        });
+        dots.forEach((d, i) => {
+          d.className =
+            "w-2 h-2 rounded-full transition-all duration-300 " +
+            (i === idx ? "bg-primary w-6" : "bg-outline-variant");
+        });
+        currentSlide = idx;
+        resetProgress();
+      }
 
-            function nextSlide() {
-              goToSlide((currentSlide + 1) % allFeedbacks.length);
-            }
-            function prevSlide() {
-              goToSlide(
-                (currentSlide - 1 + allFeedbacks.length) % allFeedbacks.length,
-              );
-            }
+      function nextSlide() {
+        goToSlide((currentSlide + 1) % allFeedbacks.length);
+      }
+      function prevSlide() {
+        goToSlide(
+          (currentSlide - 1 + allFeedbacks.length) % allFeedbacks.length,
+        );
+      }
 
-            let progressVal = 0;
-            let progressInterval = null;
-            function resetProgress() {
-              progressVal = 0;
-              document.getElementById("progressBar").style.width = "0%";
-            }
-            function startAutoPlay() {
-              if (slideInterval) clearInterval(slideInterval);
-              if (progressInterval) clearInterval(progressInterval);
-              resetProgress();
-              progressInterval = setInterval(() => {
-                progressVal += 2;
-                const bar = document.getElementById("progressBar");
-                if (bar) bar.style.width = progressVal + "%";
-                if (progressVal >= 100) {
-                  nextSlide();
-                  progressVal = 0;
-                }
-              }, 80); // ~4s per slide
-            }
+      let progressVal = 0;
+      let progressInterval = null;
+      function resetProgress() {
+        progressVal = 0;
+        document.getElementById("progressBar").style.width = "0%";
+      }
+      function startAutoPlay() {
+        if (slideInterval) clearInterval(slideInterval);
+        if (progressInterval) clearInterval(progressInterval);
+        resetProgress();
+        progressInterval = setInterval(() => {
+          progressVal += 2;
+          const bar = document.getElementById("progressBar");
+          if (bar) bar.style.width = progressVal + "%";
+          if (progressVal >= 100) {
+            nextSlide();
+            progressVal = 0;
+          }
+        }, 80); // ~4s per slide
+      }
 
-            function updateCounter() {
-              const el = document.getElementById("feedbackCount");
-              if (el) el.textContent = allFeedbacks.length;
-            }
+      function updateCounter() {
+        const el = document.getElementById("feedbackCount");
+        if (el) el.textContent = allFeedbacks.length;
+      }
 
-            // ── Star Rating ──
-            let selectedRating = 0;
-            function setRating(val) {
-              selectedRating = val;
-              document.querySelectorAll(".star-btn").forEach((btn, i) => {
-                btn.style.color = i < val ? "#f59e0b" : "#d8c3ad";
-                btn.classList.toggle("selected", i < val);
-              });
-            }
+      // ── Star Rating ──
+      let selectedRating = 0;
+      function setRating(val) {
+        selectedRating = val;
+        document.querySelectorAll(".star-btn").forEach((btn, i) => {
+          btn.style.color = i < val ? "#f59e0b" : "#d8c3ad";
+          btn.classList.toggle("selected", i < val);
+        });
+      }
 
-            // ── Char counter ──
-            const fbText = document.getElementById("fbText");
-            if (fbText) {
-              fbText.addEventListener("input", () => {
-                document.getElementById("charCount").textContent =
-                  fbText.value.length;
-              });
-            }
+      // ── Char counter ──
+      const fbText = document.getElementById("fbText");
+      if (fbText) {
+        fbText.addEventListener("input", () => {
+          document.getElementById("charCount").textContent =
+            fbText.value.length;
+        });
+      }
 
-            // ── Submit Feedback ──
-            function submitFeedback() {
-              const name = document.getElementById("fbName").value.trim();
-              const college = document.getElementById("fbCollege").value.trim();
-              const text = document.getElementById("fbText").value.trim();
+      // ── Submit Feedback ──
+      function submitFeedback() {
+        const name = document.getElementById("fbName").value.trim();
+        const college = document.getElementById("fbCollege").value.trim();
+        const text = document.getElementById("fbText").value.trim();
 
-              if (!name) {
-                alert("Please enter your name!");
-                return;
-              }
-              if (!text || text.length < 10) {
-                alert("Please write at least 10 characters of feedback!");
-                return;
-              }
-              if (!selectedRating) {
-                alert("Please select a star rating!");
-                return;
-              }
+        if (!name) {
+          alert("Please enter your name!");
+          return;
+        }
+        if (!text || text.length < 10) {
+          alert("Please write at least 10 characters of feedback!");
+          return;
+        }
+        if (!selectedRating) {
+          alert("Please select a star rating!");
+          return;
+        }
 
-              const fb = {
-                name: name,
-                college: college || "Arvi",
-                rating: selectedRating,
-                text: text,
-                ts: Date.now(),
-              };
+        const fb = {
+          name: name,
+          college: college || "Arvi",
+          rating: selectedRating,
+          text: text,
+          ts: Date.now(),
+        };
 
-              saveFeedback(fb);
-              allFeedbacks = [fb, ...allFeedbacks];
-              currentSlide = 0;
-              renderSlideshow();
-              updateCounter();
+        saveFeedback(fb);
+        allFeedbacks = [fb, ...allFeedbacks];
+        currentSlide = 0;
+        renderSlideshow();
+        updateCounter();
 
-              // Reset form
-              document.getElementById("fbName").value = "";
-              document.getElementById("fbCollege").value = "";
-              document.getElementById("fbText").value = "";
-              document.getElementById("charCount").textContent = "0";
-              setRating(0);
-              selectedRating = 0;
+        // Reset form
+        document.getElementById("fbName").value = "";
+        document.getElementById("fbCollege").value = "";
+        document.getElementById("fbText").value = "";
+        document.getElementById("charCount").textContent = "0";
+        setRating(0);
+        selectedRating = 0;
 
-              // Show success
-              const msg = document.getElementById("successMsg");
-              msg.classList.remove("hidden");
-              setTimeout(() => msg.classList.add("hidden"), 5000);
+        // Show success
+        const msg = document.getElementById("successMsg");
+        msg.classList.remove("hidden");
+        setTimeout(() => msg.classList.add("hidden"), 5000);
 
-              // Scroll to slideshow
-              document
-                .getElementById("slidesContainer")
-                .scrollIntoView({ behavior: "smooth", block: "center" });
-            }
+        // Scroll to slideshow
+        document
+          .getElementById("slidesContainer")
+          .scrollIntoView({ behavior: "smooth", block: "center" });
+      }
 
-            // ── Init ──
-            loadFeedbacks();
+      // ── Init ──
+      loadFeedbacks();
     </script>
   </body>
 </html>
