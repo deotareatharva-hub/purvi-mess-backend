@@ -1,0 +1,44 @@
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.paper-texture {
+  background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAkhrxLkWjnflbYYhWvhbrYcmDseZ8pFRRvT9bXs4MsvKo__UhquMxfCaB1rT8A2QpbCGxZ6P1Wbr2zbHczE-yWTy2DoL4dDvEwLYbVJTLFsMlbCEVaGM6tca6WdQ8f9KzQLzQIF-iyJcMzESPx1UfxKtxAQUnpdRHx2IB0U1DeZfUWr8ueEPt9IwlvIWe0eTc7DuJ_Qj1xp2mhMazUtWEXtK_goe18ZV0alc8qG-cI1zG-kzImeS3ASCHY3QN7CIymXK4l0JFjIDg);
+  opacity: 0.05;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+}
